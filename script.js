@@ -78,7 +78,16 @@
 // console.log(objB)
 // console.log(Object.keys(constructObject()))
 // console.log(Object.keys(constructObject("test", 10, "i' m a string")))
+
 // console.log(objA.greet())
+// console.log(Object.keys(objA))
+// console.log(Object.keys(objB))
+// // console.log(Object.values(objA))
+// // console.log(Object.values(objB))
+// let e = Object.keys(objA).length //  кол. ключей в объекте
+// console.log(objA["greet"])
+// // console.log(Object.values(objA.greet())) // интересная вещь 
+
 
 ///////////////////////////////////
 
@@ -86,6 +95,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////// 3. Глубокая копия обьекта ///////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 // const targetObj = {
@@ -103,19 +115,37 @@
 //   z: [1,2,3,4,5]
 // }
 // console.log(targetObj)
+
+
 // function deepCopy(origObj) {
-//   let copyObj = {}
-//   for (key in origObj) {
-//     (typeof origObj[key] === Object) ?  copyObj[key] = deepCopy(origObj[key]) : copyObj[key] = origObj[key]   
+ 
+//   let targetCopy = Array.isArray(origObj) ? [] : {}
+//   for (let i in origObj) {
+//     if (typeof  origObj[i] === "object") {
+//     // if ( origObj[i] && typeof  origObj[i] === "object") {  
+//       targetCopy[i] = deepCopy(origObj[i])
+//       // console.log(targetCopy[i], "yes")
+//     } else {
+//       targetCopy[i] =  origObj[i]
+//     //   console.log(targetCopy[i], "no")
+//     }
 //   }
-//   return copyObj
+//   return targetCopy
 // }
+
 // const copiedObj = deepCopy(targetObj)
 // console.log(copiedObj)
 // targetObj.y.q.c.d[0] = 100
 // console.log(targetObj)
 // const areElementsEqual = targetObj.y.q.c.d[0] === copiedObj.y.q.c.d[0]
 // console.log(areElementsEqual)
+// console.log(copiedObj)
+
+
+
+
+
+
 
 
 
